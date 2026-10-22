@@ -1,0 +1,32 @@
+[tool.poetry]
+name = "job-search-assistant-backend"
+version = "0.1.0"
+description = "Backend API for the job search assistant"
+authors = []
+packages = [{ include = "app" }]
+
+[tool.poetry.dependencies]
+python = "^3.12"
+fastapi = ">=0.133,<1"
+google-adk = "^2.12.0"
+uvicorn = { version = "^0.34.0", extras = ["standard"] }
+
+[tool.poetry.group.dev.dependencies]
+httpx = "^0.28.1"
+pytest = "^8.3.4"
+ruff = "^0.9.6"
+adk-skills = "^0.0.1"
+
+[build-system]
+requires = ["poetry-core>=2.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.ruff]
+line-length = 88
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
